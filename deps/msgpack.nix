@@ -1,11 +1,11 @@
 { pkgs ? import <nixpkgs> {}, commonCmakeFlags ? {} }:
-let                 
-  inherit (pkgs) 
+let
+  inherit (pkgs)
     stdenv
     fetchurl
     cmake
     ninja
-    ;  
+    ;
 in
   stdenv.mkDerivation {
     pname = "msgpack";
@@ -17,7 +17,7 @@ in
     };
 
     nativeBuildInputs = [ cmake ninja ];
-    
+
     cmakeFlags = [
       "-DMSGPACK_BUILD_TESTS=OFF"
       "-DMSGPACK_BUILD_EXAMPLES=OFF"

@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:  
+{ pkgs ? import <nixpkgs> {} }:
 
 let
   inherit (pkgs) stdenv callPackage lib;
@@ -21,7 +21,7 @@ let
     ./unibilium.nix
   ];
   makeSymLink = dep: "ln -s ${dep} $out/${dep.pname}";
-  installScript = concatMapStringsSep "\n" makeSymLink deps; 
+  installScript = concatMapStringsSep "\n" makeSymLink deps;
 in
   stdenv.mkDerivation {
     pname = "deps";

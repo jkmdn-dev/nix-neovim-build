@@ -2,7 +2,7 @@
     "-DBUILD_SHARED_LIBS=OFF"
      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
   ]}:
-let                 
+let
   parserLang = "python";
   version = "0.20.4";
   src = {

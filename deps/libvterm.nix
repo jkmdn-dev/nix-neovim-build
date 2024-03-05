@@ -1,11 +1,11 @@
 { pkgs ? import <nixpkgs> {}, commonCmakeFlags ? []  }:
-let                 
-  inherit (pkgs) 
+let
+  inherit (pkgs)
     stdenv
     fetchurl
     cmake
     ninja
-    ;  
+    ;
   libvterm_cmake = ./cmake/LibvtermCMakeLists.txt;
 in
   stdenv.mkDerivation {

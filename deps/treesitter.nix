@@ -1,11 +1,11 @@
 { pkgs ? import <nixpkgs> {}, commonCmakeFlags ? {} }:
-let                 
-  inherit (pkgs) 
+let
+  inherit (pkgs)
     stdenv
     fetchurl
     cmake
     ninja
-    ;  
+    ;
   ts_cmake = ./cmake/TreesitterCMakeLists.txt;
 in
   stdenv.mkDerivation {
@@ -21,7 +21,7 @@ in
 
     cmakeFlags = commonCmakeFlags;
 
-    postUnpack = 
+    postUnpack =
       ''
         cp ${ts_cmake} $sourceRoot/CMakeLists.txt
       '';

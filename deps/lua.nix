@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {}, commonCmakeFlags ? [] }:
-let                 
-  inherit (pkgs) 
+let
+  inherit (pkgs)
     stdenv
     fetchurl
     libedit

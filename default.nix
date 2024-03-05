@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
-let                 
-  inherit (pkgs) 
+let
+  inherit (pkgs)
     stdenv
     fetchFromGitHub
     cmake
@@ -25,14 +25,14 @@ stdenv.mkDerivation {
   };
 
   nativeBuildInputs = [
-    cmake 
-    ninja 
+    cmake
+    ninja
     autoPatchelfHook
   ];
 
   buildInputs = [ gettext deps ];
 
-  preConfigure = 
+  preConfigure =
     ''
       export PATH=${deps}/luajit/bin:$PATH
       export PATH=${deps}/luajit/lib:${deps}/luajit/include:$PATH
@@ -49,12 +49,12 @@ stdenv.mkDerivation {
     "-DCMAKE_BUILD_TYPE=Release"
     "-DDEPS_PREFIX=${deps}"
   ];
-  
+
   postInstall =
     ''
       addAutoPatchelfSearchPath ${deps}/luajit/lib/
     '';
-  
+
   meta = with lib; {
     homepage = https://neovim.io;
     description = "Neovim built with Nix";

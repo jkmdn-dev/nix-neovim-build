@@ -1,11 +1,11 @@
 { pkgs ? import <nixpkgs> {}, commonCmakeFlags ? {} }:
-let                 
-  inherit (pkgs) 
+let
+  inherit (pkgs)
     stdenv
     fetchurl
     cmake
     ninja
-    ;  
+    ;
 in
   stdenv.mkDerivation {
     pname = "unibilium";

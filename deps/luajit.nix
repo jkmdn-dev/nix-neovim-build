@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {}, commonCmakeFlags ? [] }:
-let                 
-  inherit (pkgs) 
+let
+  inherit (pkgs)
     stdenv
     fetchurl
     makeWrapper
@@ -16,7 +16,7 @@ in
     };
 
     buildInputs = [ makeWrapper ];
-    
+
     buildPhase =
       ''
         make -j CFLAGS=-fPIC CFLAGS+=-DLUA_USE_APICHECK CFLAGS+=-funwind-tables CCDEBUG+=-g Q= CC=cc

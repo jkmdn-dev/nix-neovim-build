@@ -2,7 +2,7 @@
     "-DBUILD_SHARED_LIBS=OFF"
      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
   ] }:
-let                 
+let
   parserLang = "markdown";
   version = "0.1.7";
   src = {
